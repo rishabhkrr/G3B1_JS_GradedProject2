@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Applicant Viewer</title>
+    <script src="https://code.jquery.com/jquery-3.6.4.min.js"></script>
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.3.1/css/bootstrap.min.css">
+    <link rel="stylesheet" type="text/css" href="styles.css">
+    <style>
+        #prevBtn, #nextBtn {
+            display: none;
+        }
+    </style>
+</head>
+<body>
+<div class="job">
+    <!-- <label for="jobFilter">Filter by Job:</label> -->
+    <input class="in" type="text" id="jobFilter" placeholder="Find Your Job">
+    <!-- <button class="btn btn-primary" onclick="filterByJob()">Search</button> -->
+    <div class="text-center mt-3">
+        <button id="prevBtn" class="btn btn-secondary" onclick="showPrevious()">Previous</button>
+        <button id="nextBtn" class="btn btn-secondary" onclick="showNext()">Next</button>
+    </div>
+</div>
+    <div class="container mt-3" >
+        <div class="personal-info" id="applicantDetails">
+            <!-- Applicant details will be displayed here -->
+        </div>
+
+        
+    </div>
+
+    <script src="resume.js">
+    </script>
+
+</body>
+</html>
