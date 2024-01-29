@@ -12,22 +12,17 @@ form.addEventListener('submit', (e) => {
     const userInput = document.getElementById('username').value;
     const passInput = document.getElementById('password').value;
 
-    if (userInput === username && passInput === password) {
-        window.location.href = 'resume.html';
-        alert('login Successfully');
+    if (userInput === username && passInput === password ){
+            localStorage.setItem('loggedIn', 'true');
+            window.location.href = 'resume.html';
+            alert('login Successfully');
     } else {
         errorMessage.innerText = 'Invalid username/password';
     }
 });
 
 // Restrict user from going back to the login page
-window.onload = function () {
-    if (window.history.replaceState) {
-        window.history.replaceState(null, null, window.location.href);
-    }
-};
 
-window.onpopstate = function () {
-    window.history.replaceState(null, null, window.location.href);
-};
-
+if (localStorage.getItem('loggedIn') === 'true') {
+    window.location.href = 'resume.html';
+}
